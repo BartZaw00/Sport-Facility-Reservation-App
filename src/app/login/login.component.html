@@ -1,0 +1,21 @@
+<div class="login-container">
+    <div class="middle-login-container">
+    
+    <label for="username" class="login_information">Nazwa Użytkownika</label>
+    <input type="text" placeholder="Nazwa Użytkownika" class="login_input" required>
+    
+    <label for="password" class="login_information">Hasło</label>
+    <input type="text" placeholder="Hasło" class="login_input" required>
+    <button mat-raised-button id="login_button" routerLink="/sports-facilities">
+        <b>Zaloguj się</b>
+    </button>
+    <div class="login_text">
+        <input type="checkbox" checked="checked" id="remember_me">
+        <label class="remember_me">Zapamiętaj mnie</label>
+    </div>
+    <div class="login_text">
+        <span>Nie masz konta? </span>
+        <a routerLink="/sign-up" class="link">Zarejestruj się</a>
+    </div>
+    </div>
+</div>
