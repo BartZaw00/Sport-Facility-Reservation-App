@@ -38,6 +38,10 @@ body{    overflow: hidden;}
     font-size: clamp(5px,1vw,25px);
     
  }
+ #login_button:hover{
+   background-color: white;
+   color: black;
+}
  .login_information{
     font-size: clamp(20px,2vw,80px);
  }

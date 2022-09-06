@@ -38,3 +38,14 @@ body{    overflow: hidden;}
     height: 30%;
     font-size: 20%;
  }
+ #home_button:hover{
+    background-color: white;
+    color: black;
+ }
+.sports-facilities-container{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin:20px auto;
+}

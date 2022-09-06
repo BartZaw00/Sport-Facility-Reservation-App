@@ -30,10 +30,14 @@ body{    overflow: hidden;}
     }
  
  }
- #reservation_button{
+ #reservation_home_button{
     background-color: forestgreen;
     color: white;
     width: 25%;
     height: 25%;
     font-size: 30%;
+ }
+ #reservation_home_button:hover{
+    background-color: white;
+    color: black;
  }
