@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginModel } from '../models/login';
+import { LoginService } from '../services/login.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +12,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  public loginUser: LoginModel  = new LoginModel();
 
-  ngOnInit(): void {
+  constructor(private _loginService: LoginService, private _router: Router) {}
+   
+  ngOnInit(): void {}
+  
+  login(){
+    this._loginService.loginUser(this.loginUser).subscribe({
+      next: (data: any) => {
+        localStorage.setItem('token',data.jwtBearer)
+        localStorage.setItem('role',data.role?.toString())
+        console.log(this.loginUser)
+        this._router.navigate(['/sports-facilities']);
+      },
+      error: () => {
+        console.log("error")
+      }
+    })
   }
-
 }

@@ -4,8 +4,19 @@
         <button mat-raised-button id="home_button" routerLink="/home">
             <b>POWRÓT DO STRONY GŁÓWNEJ</b>
         </button>
-        </div>
+    </div>
 </div>
 <div class="sports-facilities-container">
-<app-sport-facility-card></app-sport-facility-card>
+    <app-sport-facility-card *ngIf="loginService.role==2||loginService.role==3"></app-sport-facility-card>
+    <div class="sport-facility-card" *ngFor="let sportFacility of _sportFacilities">
+        <div class="sport-facility-card-container"> <img src="../../assets/orlik41lodz.jpg" alt="thumbnail"
+                class="sport-facility-thumbnail"> <button mat-raised-button id="reservation_button"
+                routerLink="/sport-facility">
+                <b>REZERWUJ</b>
+            </button>
+        </div>
+        <div class="sport-facility-description">
+            <p class="sport-facility-name">{{ sportFacility.sportFacilityName }}</p>
+        </div>
+    </div>
 </div>

@@ -1,4 +1,5 @@
-.sport-facility-card{
+
+#sport-facility-add-card{
    width: 280px;
    margin:10px;
    height: 260px;
@@ -8,17 +9,17 @@
    transition-duration: 0.3s;
    cursor: pointer;
    box-shadow: 0 0 5px rgb(0,0,20);
+   opacity:55%;
 }
-.sport-facility-card:hover{
+#sport-facility-add-card:hover{
    transform: translateY(-3px);
 }
 .sport-facility-card-container{
-   background-color: rgb(131, 131, 131);
    position: relative;
    height:172px;
-   color: white;
    text-align: center;
 }
+
 .sport-facility-thumbnail{
    position: absolute;
    top: 5px;
@@ -42,12 +43,12 @@
    white-space: nowrap;
    text-overflow: ellipsis;
 }
-#reservation_button{
+#add_sport_facility_button{
    background-color: forestgreen;
    color: white;
    margin-top: 80px;
 }
-#reservation_button:hover{
+#add_sport_facility_button:hover{
    background-color: white;
    color: black;
    margin-top: 80px;

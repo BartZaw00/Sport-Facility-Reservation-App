@@ -1,0 +1,14 @@
+.pop-up-container {
+    height: 200px;
+}
+
+.label {
+    display: block;
+    padding-top: 15px;
+}
+
+.button{
+    background-color: forestgreen;
+    color:white;
+    margin-top:15px;
+}

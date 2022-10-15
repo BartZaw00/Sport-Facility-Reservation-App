@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SportFacilityCardComponent } from './sport-facility-card.component';
+import { SportFacilityCardComponent } from './add-sport-facility-card.component';
 
 describe('SportFacilityCardComponent', () => {
   let component: SportFacilityCardComponent;

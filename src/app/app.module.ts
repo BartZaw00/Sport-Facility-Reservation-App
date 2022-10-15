@@ -14,7 +14,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {MatInputModule} from '@angular/material/input';
-import { SportFacilityCardComponent } from './sport-facility-card/sport-facility-card.component';
+import { SportFacilityCardComponent } from './add-sport-facility-card/add-sport-facility-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+import { SportFacilityPopUpComponent } from './sport-facility-pop-up/sport-facility-pop-up.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 
 @NgModule({
@@ -26,7 +32,8 @@ import { SportFacilityCardComponent } from './sport-facility-card/sport-facility
     PageNotFoundComponent,
     LoginComponent,
     SignUpComponent,
-    SportFacilityCardComponent
+    SportFacilityCardComponent,
+    SportFacilityPopUpComponent,
   ],
   imports: [
     MatButtonModule,
@@ -35,9 +42,13 @@ import { SportFacilityCardComponent } from './sport-facility-card/sport-facility
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

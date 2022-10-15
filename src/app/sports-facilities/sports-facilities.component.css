@@ -29,6 +29,9 @@ body{    overflow: hidden;}
     .sports-facilities-middle-container { 
        font-size: 2em; 
     }
+    #home_button{
+        height:70%;
+    }
  
  }
  #home_button{
@@ -49,3 +52,72 @@ body{    overflow: hidden;}
     max-width: 1200px;
     margin:20px auto;
 }
+
+
+#sport-facility-add-card{
+    width: 280px;
+    margin:10px;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: rgba(131, 131, 131);
+    transition-duration: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(0,0,20);
+    opacity:55%;
+}
+.sport-facility-card{
+    width: 280px;
+    margin:10px;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: rgb(131, 131, 131);
+    transition-duration: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(0,0,20);
+ }
+ .sport-facility-card:hover{
+    transform: translateY(-3px);
+ }
+ .sport-facility-card-container{
+    background-color: rgb(131, 131, 131);
+    position: relative;
+    height:172px;
+    color: white;
+    text-align: center;
+ }
+
+ .sport-facility-thumbnail{
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 200px;
+ }
+ .sport-facility-description{
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 70px;
+ }
+ .sport-facility-name{
+    color:white;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+ }
+ #reservation_button{
+    background-color: forestgreen;
+    color: white;
+    margin-top: 80px;
+ }
+ #reservation_button:hover{
+    background-color: white;
+    color: black;
+    margin-top: 80px;
+ }

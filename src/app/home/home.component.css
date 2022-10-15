@@ -28,14 +28,29 @@ body{    overflow: hidden;}
     .middle-container { 
        font-size: 2em; 
     }
- 
  }
+
+ @media only screen and (max-height: 600px) {
+
+   .middle-container { 
+      font-size: 2em; 
+      padding-top:35px;
+      height: 65%;
+   }
+   #reservation_home_button{
+      margin-top:25px;
+      min-height: fit-content;
+   }
+}
+
  #reservation_home_button{
     background-color: forestgreen;
     color: white;
     width: 25%;
     height: 25%;
     font-size: 30%;
+    min-width: 15vw;
+    min-height: 7vh;
  }
  #reservation_home_button:hover{
     background-color: white;
