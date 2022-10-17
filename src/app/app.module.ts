@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SportFacilityPopUpComponent } from './sport-facility-pop-up/sport-facility-pop-up.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { AuthenticationGuard } from './authentication.guard';
     SignUpComponent,
     SportFacilityCardComponent,
     SportFacilityPopUpComponent,
+    UsersComponent
   ],
   imports: [
     MatButtonModule,
@@ -46,7 +49,8 @@ import { AuthenticationGuard } from './authentication.guard';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    Ng2SearchPipeModule
   ],
   providers: [AuthenticationGuard],
   bootstrap: [AppComponent]

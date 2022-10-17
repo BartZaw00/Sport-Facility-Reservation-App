@@ -21,8 +21,9 @@ export class LoginComponent implements OnInit {
   login(){
     this._loginService.loginUser(this.loginUser).subscribe({
       next: (data: any) => {
-        localStorage.setItem('token',data.jwtBearer)
+        //localStorage.setItem('token',data.jwtBearer)
         localStorage.setItem('role',data.role?.toString())
+        this._loginService.setRole(data.role);
         console.log(this.loginUser)
         this._router.navigate(['/sports-facilities']);
       },

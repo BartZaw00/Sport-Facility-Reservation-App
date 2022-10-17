@@ -8,7 +8,11 @@ import { LoginService } from '../services/login.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(public loginService: LoginService) { }
+  role: Number = -1;
+
+  constructor(public loginService: LoginService) {
+    loginService.roleChanged.subscribe( (role) => this.role = role)
+   }
 
   ngOnInit(): void {
   }

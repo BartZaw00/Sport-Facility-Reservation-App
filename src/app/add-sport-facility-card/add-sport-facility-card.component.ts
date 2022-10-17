@@ -23,5 +23,4 @@ export class SportFacilityCardComponent implements OnInit {
     this._dialog.open(SportFacilityPopUpComponent);
   }
   
-
 }

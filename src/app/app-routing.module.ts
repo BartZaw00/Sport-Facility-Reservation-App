@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SportsFacilitiesComponent } from './sports-facilities/sports-facilities.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'sports-facilities',component:SportsFacilitiesComponent, canActivate:[AuthenticationGuard]},
   {path:'login',component:LoginComponent},
   {path:'sign-up',component:SignUpComponent},
+  {path:'users',component:UsersComponent},
   {path:'**',component:PageNotFoundComponent}
 ];
 

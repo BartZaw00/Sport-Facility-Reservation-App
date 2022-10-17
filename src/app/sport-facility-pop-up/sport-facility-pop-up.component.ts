@@ -10,8 +10,9 @@ import { SportFacilityService } from '../services/sport-facility.service';
 })
 export class SportFacilityPopUpComponent implements OnInit {
 
-  public sportFacility: SportFacilityModel = new SportFacilityModel();
+  @Input() selectedSportFacility?: SportFacilityModel;
 
+  public sportFacility: SportFacilityModel = new SportFacilityModel();
 
   constructor(private _sportFacilityService: SportFacilityService) { }
 
@@ -23,6 +24,7 @@ export class SportFacilityPopUpComponent implements OnInit {
        .subscribe({
         next: (result: SportFacilityModel[]) => {
           this._sportFacilityService.getSportFacilities();
+          window.location.reload();
         },
        
         error: () => {
@@ -30,6 +32,19 @@ export class SportFacilityPopUpComponent implements OnInit {
         }
         
        })
+     }
+
+     editSportFacility(sportFacility: SportFacilityModel){
+      this._sportFacilityService.updateSportFacility(sportFacility)
+      .subscribe({
+        next: (result:SportFacilityModel[]) => {
+          this._sportFacilityService.getSportFacilities();
+          window.location.reload(); 
+        },
+        error: () => {
+          console.log("error")
+        }
+      })
      }
 
 }

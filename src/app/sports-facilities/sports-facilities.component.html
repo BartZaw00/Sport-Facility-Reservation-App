@@ -6,13 +6,23 @@
         </button>
     </div>
 </div>
+
+<div class="input-container"><input type="text" placeholder="Podaj adres" [(ngModel)]="searchText" /></div>
 <div class="sports-facilities-container">
-    <app-sport-facility-card *ngIf="loginService.role==2||loginService.role==3"></app-sport-facility-card>
-    <div class="sport-facility-card" *ngFor="let sportFacility of _sportFacilities">
+    <app-sport-facility-card *ngIf="loginService.role==1||loginService.role==2"></app-sport-facility-card>
+    <div class="sport-facility-card" *ngFor="let sportFacility of _sportFacilities | filter: searchText">
         <div class="sport-facility-card-container"> <img src="../../assets/orlik41lodz.jpg" alt="thumbnail"
-                class="sport-facility-thumbnail"> <button mat-raised-button id="reservation_button"
-                routerLink="/sport-facility">
+                class="sport-facility-thumbnail">
+            <button mat-raised-button id="reservation_button" routerLink="/sport-facility">
                 <b>REZERWUJ</b>
+            </button>
+            <button *ngIf="loginService.role==1||loginService.role==2" mat-raised-button id="edit_button"
+                (click)="openSelectedPopUp(sportFacility)">
+                <b>EDYTUJ</b>
+            </button>
+            <button *ngIf="loginService.role==1||loginService.role==2" mat-raised-button id="delete_button"
+                (click)="deleteSportFacility(sportFacility)">
+                <b>USUŃ</b>
             </button>
         </div>
         <div class="sport-facility-description">
