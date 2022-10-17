@@ -1,0 +1,29 @@
+table{
+    margin: 20px 0 0 20px;
+    font-size:20px;
+    border-collapse: collapse;
+}
+th,td{
+    padding:10px;
+    border:2px solid black;
+    margin:0;
+}
+.no-border{
+    border:none;
+}
+#add_user_button{
+    background-color: forestgreen;
+    color: white;
+    margin:20px 0 0 20px;
+ }
+#edit_user_button{
+   background-color: rgb(250, 111, 18);
+}
+#delete_user_button{
+   background-color: rgb(247, 22, 22);
+   color: white;
+}
+#add_user_button:hover, #edit_user_button:hover, #delete_user_button:hover{
+   background-color: white;
+   color: black;
+}

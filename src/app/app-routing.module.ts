@@ -7,11 +7,13 @@ import { SportsFacilitiesComponent } from './sports-facilities/sports-facilities
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { UsersComponent } from './users/users.component';
+import { SportFacilityComponent } from './sport-facility/sport-facility.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component:HomeComponent},
   {path:'sports-facilities',component:SportsFacilitiesComponent, canActivate:[AuthenticationGuard]},
+  {path:'sport-facility',component:SportFacilityComponent, canActivate:[AuthenticationGuard] },
   {path:'login',component:LoginComponent},
   {path:'sign-up',component:SignUpComponent},
   {path:'users',component:UsersComponent},
@@ -23,4 +25,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

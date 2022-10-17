@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,13 @@ import { SportFacilityPopUpComponent } from './sport-facility-pop-up/sport-facil
 import { AuthenticationGuard } from './authentication.guard';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UsersComponent } from './users/users.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { SportFacilityComponent } from './sport-facility/sport-facility.component';
+import { registerLocaleData } from '@angular/common';
+import localePl from '@angular/common/locales/pl';
+
+registerLocaleData(localePl);
 
 
 @NgModule({
@@ -36,7 +43,8 @@ import { UsersComponent } from './users/users.component';
     SignUpComponent,
     SportFacilityCardComponent,
     SportFacilityPopUpComponent,
-    UsersComponent
+    UsersComponent,
+    SportFacilityComponent
   ],
   imports: [
     MatButtonModule,
@@ -50,7 +58,8 @@ import { UsersComponent } from './users/users.component';
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [AuthenticationGuard],
   bootstrap: [AppComponent]

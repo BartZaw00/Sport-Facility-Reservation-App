@@ -17,6 +17,7 @@ export class SportFacilityPopUpComponent implements OnInit {
   constructor(private _sportFacilityService: SportFacilityService) { }
 
   ngOnInit(): void {
+    console.log(this.selectedSportFacility)
   }
 
   createSportFacility(sportFacility: SportFacilityModel){

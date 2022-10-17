@@ -2,11 +2,20 @@
     <tr>
         <th>Nick</th>
         <th>Email</th>
-        <th></th>
-        <th></th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Hasło</th>
+        <th>Rola</th>
     </tr>
     <tr *ngFor="let user of _users">
         <td>{{user.userNick}}</td>
         <td>{{user.userEmail}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.userSurname}}</td>
+        <td>{{user.userPassword}}</td>
+        <td>{{user.userRole}}</td>
+        <td class="no-border"><button mat-raised-button id="edit_user_button">Edytuj</button></td>
+        <td class="no-border"><button mat-raised-button id="delete_user_button">Usuń</button></td>
     </tr>
 </table>
+<button mat-raised-button id="add_user_button">Dodaj</button>

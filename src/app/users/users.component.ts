@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
     .subscribe(
       {next: (response: UserModel[]) => {
         this._users = response;
-        console.log(this._users)
+        console.log(this._users);
       },
      
       error: () => {
