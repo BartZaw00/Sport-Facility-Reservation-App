@@ -10,7 +10,7 @@ import { UserService } from '../services/user.service';
 export class UsersComponent implements OnInit {
 
   _users: UserModel[] = [];
-  public users: UserModel = new UserModel();
+  public user: UserModel = new UserModel();
 
   constructor(private _userService: UserService) { }
 
@@ -33,5 +33,32 @@ export class UsersComponent implements OnInit {
      )
    }
 
+   createUser(user: UserModel){
+    this._userService.createUser(user)
+    .subscribe({
+     next: (result: UserModel[]) => {
+       this._userService.getUsers();
+       window.location.reload();
+     },
+    
+     error: () => {
+            console.log("error")
+     }
+     
+    })
+  }
+
+   deleteUser(user: UserModel){
+    this._userService.deleteUser(user)
+    .subscribe({
+      next: (result:UserModel[]) => {
+        this._userService.getUsers;
+        window.location.reload(); 
+      },
+      error: () => {
+        console.log("error")
+      }
+    })
+   }
 
 }

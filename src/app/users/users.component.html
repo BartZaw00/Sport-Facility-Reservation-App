@@ -15,7 +15,15 @@
         <td>{{user.userPassword}}</td>
         <td>{{user.userRole}}</td>
         <td class="no-border"><button mat-raised-button id="edit_user_button">Edytuj</button></td>
-        <td class="no-border"><button mat-raised-button id="delete_user_button">Usuń</button></td>
+        <td class="no-border"><button mat-raised-button id="delete_user_button" (click)="deleteUser(user)">Usuń</button></td>
+    </tr>
+    <tr>
+        <td><input  [(ngModel)]="user.userNick" placeholder="Nick" /></td>
+        <td><input [(ngModel)]="user.userEmail" placeholder="Email" /></td>
+        <td><input [(ngModel)]="user.userName" placeholder="Imię" /></td>
+        <td><input [(ngModel)]="user.userSurname" placeholder="Nazwisko" /></td>
+        <td><input [(ngModel)]="user.userPassword" placeholder="Hasło" /></td>
+        <td><input [(ngModel)]="user.userRole" placeholder="Rola" /></td>
+        <td class="no-border"><button mat-raised-button id="add_user_button" (click)="createUser(user)">Dodaj</button></td>
     </tr>
 </table>
-<button mat-raised-button id="add_user_button">Dodaj</button>
