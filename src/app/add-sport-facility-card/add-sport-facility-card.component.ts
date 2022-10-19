@@ -11,12 +11,9 @@ import { SportFacilityPopUpComponent } from '../sport-facility-pop-up/sport-faci
 })
 export class SportFacilityCardComponent implements OnInit {
 
-  
-
   constructor(private _dialog:MatDialog) { }
 
   ngOnInit(): void {
-    
   }
 
   openPopUp(){

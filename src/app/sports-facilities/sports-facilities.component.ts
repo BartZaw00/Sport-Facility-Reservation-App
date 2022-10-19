@@ -56,7 +56,9 @@ export class SportsFacilitiesComponent implements OnInit {
 
    openSelectedPopUp(sportFacility: SportFacilityModel) {
     console.log(sportFacility);
-    this._dialog.open(SportFacilityPopUpComponent);
+    this._dialog.open(SportFacilityPopUpComponent,{
+      data: sportFacility
+    });
   }
 }
 

@@ -28,6 +28,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { SportFacilityComponent } from './sport-facility/sport-facility.component';
 import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
+import { UserPopUpComponent } from './user-pop-up/user-pop-up.component';
 
 registerLocaleData(localePl);
 
@@ -44,7 +45,8 @@ registerLocaleData(localePl);
     SportFacilityCardComponent,
     SportFacilityPopUpComponent,
     UsersComponent,
-    SportFacilityComponent
+    SportFacilityComponent,
+    UserPopUpComponent
   ],
   imports: [
     MatButtonModule,

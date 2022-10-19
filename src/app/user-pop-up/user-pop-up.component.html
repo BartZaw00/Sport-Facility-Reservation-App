@@ -1,0 +1,11 @@
+<div *ngIf="selectedUser">
+    <div class="label">Nick: <input [(ngModel)]="selectedUser.userNick" placeholder="Nick" /></div>
+    <div class="label">Email: <input [(ngModel)]="selectedUser.userEmail" placeholder="Email" /></div>
+    <div class="label">Imię: <input [(ngModel)]="selectedUser.userName" placeholder="Imię" /></div>
+    <div class="label">Nazwisko: <input [(ngModel)]="selectedUser.userSurname" placeholder="Nazwisko" /></div>
+    <div class="label">Hasło: <input [(ngModel)]="selectedUser.userPassword" placeholder="Hasło" /></div>
+    <div class="label">Rola: <input [(ngModel)]="selectedUser.userRole" placeholder="Rola" /></div>
+    <button (click)="editSelectedUser(selectedUser)" mat-raised-button class="button">
+        <b>Zapisz</b>
+    </button>
+</div>

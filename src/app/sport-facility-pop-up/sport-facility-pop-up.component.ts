@@ -10,14 +10,12 @@ import { SportFacilityService } from '../services/sport-facility.service';
 })
 export class SportFacilityPopUpComponent implements OnInit {
 
-  @Input() selectedSportFacility?: SportFacilityModel;
 
   public sportFacility: SportFacilityModel = new SportFacilityModel();
 
-  constructor(private _sportFacilityService: SportFacilityService) { }
+  constructor(private _sportFacilityService: SportFacilityService, @Inject(MAT_DIALOG_DATA) public selectedSportFacility: SportFacilityModel ) { }
 
   ngOnInit(): void {
-    console.log(this.selectedSportFacility)
   }
 
   createSportFacility(sportFacility: SportFacilityModel){

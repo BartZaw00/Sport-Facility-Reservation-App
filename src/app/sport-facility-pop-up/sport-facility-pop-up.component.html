@@ -1,17 +1,14 @@
-<div  class="pop-up-container">
-    <div class="label">Adres obiektu: <input  [(ngModel)]="sportFacility.sportFacilityName" placeholder="Adres obiektu" /></div>
-    <div class="label">Miasto obiektu: <input [(ngModel)]="sportFacility.sportFacilityCity" placeholder="Miasto obiektu" /></div>
-    <div class="label">Kraj obiektu: <input [(ngModel)]="sportFacility.sportFacilityCountry" placeholder="Kraj obiektu" /></div>
-    <div class="label">Typ obiektu: <input [(ngModel)]="sportFacility.sportFacilityType" placeholder="Typ obiektu" /></div>
-    <button *ngIf="!sportFacility.idsportFacility; else elseBlock" (click)="createSportFacility(sportFacility)" mat-raised-button class="button">
+<div *ngIf="selectedSportFacility; else elseBlock" class="pop-up-container">
+    <div class="label">Adres obiektu: <input  [(ngModel)]="selectedSportFacility.sportFacilityName" placeholder="Adres obiektu" /></div>
+    <div class="label">Miasto obiektu: <input [(ngModel)]="selectedSportFacility.sportFacilityCity" placeholder="Miasto obiektu" /></div>
+    <div class="label">Kraj obiektu: <input [(ngModel)]="selectedSportFacility.sportFacilityCountry" placeholder="Kraj obiektu" /></div>
+    <div class="label">Typ obiektu: <input [(ngModel)]="selectedSportFacility.sportFacilityType" placeholder="Typ obiektu" /></div>
+    <button (click)="editSportFacility(selectedSportFacility)" mat-raised-button class="button">
         <b>Zapisz</b>
     </button>
-    <ng-template #elseBlock><button (click)="editSportFacility(sportFacility)" mat-raised-button class="button">
-        <b>Zapiszx</b>
-    </button></ng-template>
 </div>
 
-<!-- <ng-template><div class="pop-up-container">
+<ng-template #elseBlock><div class="pop-up-container">
     <div class="label">Adres obiektu: <input  [(ngModel)]="sportFacility.sportFacilityName" placeholder="Adres obiektu" /></div>
     <div class="label">Miasto obiektu: <input [(ngModel)]="sportFacility.sportFacilityCity" placeholder="Miasto obiektu" /></div>
     <div class="label">Kraj obiektu: <input [(ngModel)]="sportFacility.sportFacilityCountry" placeholder="Kraj obiektu" /></div>
@@ -19,6 +16,4 @@
     <button (click)="createSportFacility(sportFacility)" mat-raised-button class="button">
         <b>Zapisz</b>
     </button>
-</div></ng-template> -->
-
-<!-- <ng-template #elseBlock><button mat-button class="menu1" routerLink="/login">Zaloguj</button></ng-template> -->
+</div></ng-template>

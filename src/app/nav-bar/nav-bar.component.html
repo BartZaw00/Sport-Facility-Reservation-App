@@ -2,7 +2,7 @@
   <div>
     <button mat-button class="menu1" routerLink="/home">Strona Główna</button>
     <button mat-button class="menu1" routerLink="/sports-facilities">Obiekty Sportowe</button>
-    <button *ngIf="loginService.role==1;" mat-button class="menu1" routerLink="/users">Użytkownicy</button>
+    <button *ngIf="loginService.role==1" mat-button class="menu1" routerLink="/users">Użytkownicy</button>
   </div>
   <button *ngIf="loginService.role; else elseBlock" mat-button class="menu1" (click)="loginService.logOut()">Wyloguj</button>
   <ng-template #elseBlock><button mat-button class="menu1" routerLink="/login">Zaloguj</button></ng-template>

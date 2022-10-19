@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { UserModel } from '../models/user';
 import { UserService } from '../services/user.service';
+import { UserPopUpComponent } from '../user-pop-up/user-pop-up.component';
 
 @Component({
   selector: 'app-users',
@@ -11,11 +13,14 @@ export class UsersComponent implements OnInit {
 
   _users: UserModel[] = [];
   public user: UserModel = new UserModel();
+  public selectedUser: UserModel = new UserModel();
+  searchText: any;
 
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UserService, private _dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getUsers();
+    console.log(this.selectedUser)
   }
 
   getUsers(): void{
@@ -61,4 +66,9 @@ export class UsersComponent implements OnInit {
     })
    }
 
+   selectUserPopUp(user: UserModel){
+    this._dialog.open(UserPopUpComponent,{
+      data: user
+    });
+   }
 }

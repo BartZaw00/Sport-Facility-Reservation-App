@@ -1,3 +1,4 @@
+<div class="input-container"><input type="text" placeholder="Podaj adres" [(ngModel)]="searchText" /></div>
 <table>
     <tr>
         <th>Nick</th>
@@ -7,23 +8,26 @@
         <th>Hasło</th>
         <th>Rola</th>
     </tr>
-    <tr *ngFor="let user of _users">
+    <tr *ngFor="let user of _users | filter: searchText">
         <td>{{user.userNick}}</td>
         <td>{{user.userEmail}}</td>
         <td>{{user.userName}}</td>
         <td>{{user.userSurname}}</td>
         <td>{{user.userPassword}}</td>
         <td>{{user.userRole}}</td>
-        <td class="no-border"><button mat-raised-button id="edit_user_button">Edytuj</button></td>
-        <td class="no-border"><button mat-raised-button id="delete_user_button" (click)="deleteUser(user)">Usuń</button></td>
+        <td class="no-border"><button mat-raised-button id="edit_user_button" (click)="selectUserPopUp(user)">Edytuj</button>
+        </td>
+        <td class="no-border"><button mat-raised-button id="delete_user_button" (click)="deleteUser(user)">Usuń</button>
+        </td>
     </tr>
     <tr>
-        <td><input  [(ngModel)]="user.userNick" placeholder="Nick" /></td>
+        <td><input [(ngModel)]="user.userNick" placeholder="Nick" /></td>
         <td><input [(ngModel)]="user.userEmail" placeholder="Email" /></td>
         <td><input [(ngModel)]="user.userName" placeholder="Imię" /></td>
         <td><input [(ngModel)]="user.userSurname" placeholder="Nazwisko" /></td>
         <td><input [(ngModel)]="user.userPassword" placeholder="Hasło" /></td>
         <td><input [(ngModel)]="user.userRole" placeholder="Rola" /></td>
-        <td class="no-border"><button mat-raised-button id="add_user_button" (click)="createUser(user)">Dodaj</button></td>
+        <td class="no-border"><button mat-raised-button id="add_user_button" (click)="createUser(user)">Dodaj</button>
+        </td>
     </tr>
 </table>
