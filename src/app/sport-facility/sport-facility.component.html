@@ -26,3 +26,31 @@
     >
     </mwl-calendar-day-view>
   </div>
+
+  <div class="input-container"><input type="text" placeholder="Podaj dane rezerwacji" [(ngModel)]="searchText" /></div>
+<table>
+    <tr>
+        <th>Początek rezerwacji</th>
+        <th>Koniec rezerwacji</th>
+        <th>ID użytkownika</th>
+        <th>ID obiektu</th>
+    </tr>
+    <tr *ngFor="let reservation of _reservations | filter: searchText">
+        <td>{{reservation.ReservationDate}}</td>
+        <td>{{reservation.ReservationFinishDate}}</td>
+        <td>{{reservation.idSportFacility}}</td>
+        <td>{{reservation.idUser}}</td>
+        <td class="no-border"><button mat-raised-button id="edit_reservation_button" >Edytuj</button>
+        </td>
+        <td class="no-border"><button mat-raised-button id="delete_reservation_button" (click)="deleteReservation(reservation)">Usuń</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input [(ngModel)]="reservation.ReservationDate" placeholder="Początek rezerwacji" /></td>
+        <td><input [(ngModel)]="reservation.ReservationFinishDate" placeholder="Koniec rezerwacji" /></td>
+        <td><input [(ngModel)]="reservation.idUser" placeholder="ID użytkownika" /></td>
+        <td><input [(ngModel)]="reservation.idSportFacility" placeholder="ID obiektu" /></td>
+        <td class="no-border"><button mat-raised-button id="add_reservation_button" (click)="createReservation(reservation)">Dodaj</button>
+        </td>
+    </tr>
+</table>

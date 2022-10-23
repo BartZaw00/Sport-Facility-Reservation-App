@@ -1,0 +1,33 @@
+table{
+    margin: 20px 0 0 20px;
+    font-size:20px;
+    border-collapse: collapse;
+}
+th,td{
+    padding:10px;
+    border:2px solid black;
+    margin:0;
+}
+.no-border{
+    border:none;
+}
+#add_reservation_button{
+    background-color: forestgreen;
+    color: white;
+    margin:20px 0 0 20px;
+ }
+#edit_reservation_button{
+   background-color: rgb(250, 111, 18);
+}
+#delete_reservation_button{
+   background-color: rgb(247, 22, 22);
+   color: white;
+}
+#add_reservation_button:hover, #edit_reservation_button:hover, #delete_reservation_button:hover{
+   background-color: white;
+   color: black;
+}
+.label {
+    display: block;
+    padding-top: 15px;
+}
