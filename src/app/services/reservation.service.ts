@@ -33,7 +33,7 @@ export class ReservationService {
   }
   public deleteReservation(obj: ReservationModel): Observable<ReservationModel[]> {
     return this.http.delete<ReservationModel[]>(
-      `${environment.apiUrl}/${this.url}/${obj.idReservation}`
+      `${environment.apiUrl}/${this.url}/${obj.idreservation}`
       );
   }
 }

@@ -20,7 +20,6 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
-    console.log(this.selectedUser)
   }
 
   getUsers(): void{
