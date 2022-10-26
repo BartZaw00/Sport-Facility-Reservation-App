@@ -12,17 +12,24 @@ import { UserService } from '../services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  public loginUser: LoginModel  = new LoginModel();
+  public loginUser: LoginModel = new LoginModel();
 
-  constructor(private _loginService: LoginService, private _router: Router) {}
-   
-  ngOnInit(): void {}
-  
-  login(){
+  constructor(private _loginService: LoginService, private _router: Router) { }
+
+  ngOnInit(): void {
+    if (!localStorage.getItem('key')) {
+      localStorage.setItem('key', 'loaded')
+      location.reload()
+    } else {
+      localStorage.removeItem('key')
+    }
+  }
+
+  login() {
     this._loginService.loginUser(this.loginUser).subscribe({
       next: (data: any) => {
         //localStorage.setItem('token',data.jwtBearer)
-        localStorage.setItem('role',data.role?.toString())
+        localStorage.setItem('role', data.role?.toString())
         this._loginService.setRole(data.role);
         console.log(this.loginUser)
         this._router.navigate(['/sports-facilities']);
