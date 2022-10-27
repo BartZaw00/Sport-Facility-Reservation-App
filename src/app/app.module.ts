@@ -29,6 +29,7 @@ import { SportFacilityComponent } from './sport-facility/sport-facility.componen
 import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
 import { UserPopUpComponent } from './user-pop-up/user-pop-up.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 registerLocaleData(localePl);
 
@@ -46,7 +47,8 @@ registerLocaleData(localePl);
     SportFacilityPopUpComponent,
     UsersComponent,
     SportFacilityComponent,
-    UserPopUpComponent
+    UserPopUpComponent,
+    ReservationsComponent
   ],
   imports: [
     MatButtonModule,

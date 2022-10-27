@@ -8,6 +8,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthenticationGuard } from './authentication.guard';
 import { UsersComponent } from './users/users.component';
 import { SportFacilityComponent } from './sport-facility/sport-facility.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'sign-up',component:SignUpComponent},
   {path:'users',component:UsersComponent},
+  {path:'reservations',component:ReservationsComponent},
   {path:'**',component:PageNotFoundComponent}
 ];
 

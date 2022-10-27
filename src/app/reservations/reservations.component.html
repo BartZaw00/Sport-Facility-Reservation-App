@@ -1,0 +1,71 @@
+
+  <div [ngSwitch]="view">
+    <mwl-calendar-month-view
+      *ngSwitchCase="'month'"
+      [viewDate]="viewDate"
+      [events]="events"
+      [locale]="locale"
+      [weekStartsOn]="weekStartsOn"
+      [weekendDays]="weekendDays"
+    >
+    </mwl-calendar-month-view>
+    <mwl-calendar-week-view
+      *ngSwitchCase="'week'"
+      [viewDate]="viewDate"
+      [events]="events"
+      [locale]="locale"
+      [weekStartsOn]="weekStartsOn"
+      [weekendDays]="weekendDays"
+    >
+    </mwl-calendar-week-view>
+    <mwl-calendar-day-view
+      *ngSwitchCase="'day'"
+      [viewDate]="viewDate"
+      [events]="events"
+      [locale]="locale"
+    >
+    </mwl-calendar-day-view>
+  </div>
+
+  <div class="input-container"><input type="text" placeholder="Podaj dane rezerwacji" [(ngModel)]="searchText" /></div>
+<table>
+    <tr>
+        <th>Początek rezerwacji</th>
+        <th>Koniec rezerwacji</th>
+        <th>Adres obiektu</th>
+        <th>Miasto obiektu</th>
+        <th>Kraj obiektu</th>
+        <th>Typ obiektu</th>
+        <th>Nick</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Email</th>
+        <th>Rola</th>
+    </tr>
+    <tr *ngFor="let reservation of _reservations | filter: searchText">
+        <td>{{reservation.reservationDate}}</td>
+        <td>{{reservation.reservationFinishDate}}</td>
+        <td>{{reservation.sportFacilityName}}</td>
+        <td>{{reservation.sportFacilityCity}}</td>
+        <td>{{reservation.sportFacilityCountry}}</td>
+        <td>{{reservation.sportFacilityType}}</td>
+        <td>{{reservation.userNick}}</td>
+        <td>{{reservation.userName}}</td>
+        <td>{{reservation.userSurname}}</td>
+        <td>{{reservation.userEmail}}</td>
+        <td>{{reservation.userRole}}</td>
+        <td class="no-border"><button mat-raised-button id="edit_reservation_button" >Edytuj</button>
+        </td>
+        <td class="no-border"><button mat-raised-button id="delete_reservation_button" (click)="deleteReservation(reservation)">Usuń</button>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td><input [(ngModel)]="reservation.reservationDate" placeholder="Początek rezerwacji" /></td>
+        <td><input [(ngModel)]="reservation.reservationFinishDate" placeholder="Koniec rezerwacji" /></td>
+        <td><input [(ngModel)]="reservation.reservationSportFacility" placeholder="ID obiektu" /></td>
+        <td class="no-border"><button mat-raised-button id="add_reservation_button" (click)="createReservation(reservation)">Dodaj</button>
+        </td>
+    </tr>
+</table>

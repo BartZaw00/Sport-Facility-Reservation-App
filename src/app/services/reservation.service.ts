@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ReservationModel } from '../models/reservation';
+import { ReservationWithDetailsModel } from '../models/reservationWithDetails';
 
 
 @Injectable({
@@ -16,7 +17,12 @@ export class ReservationService {
 
   public getReservations(): Observable<ReservationModel[]> {
     return this.http.get<ReservationModel[]>(
-     `${environment.apiUrl}/${this.url}`
+     `${environment.apiUrl}/${this.url}/reservations`
+      );
+  }
+  public getReservationsWithDetails(): Observable<ReservationWithDetailsModel[]> {
+    return this.http.get<ReservationWithDetailsModel[]>(
+     `${environment.apiUrl}/${this.url}/reservationsWithDetails`
       );
   }
   public createReservation(obj: ReservationModel): Observable<ReservationModel[]> {
