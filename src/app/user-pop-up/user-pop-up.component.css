@@ -7,8 +7,16 @@
     padding-top: 15px;
 }
 
+.user-input {
+   height: 10px;
+   padding: 5px 10px;
+   border-radius: 5px;
+   border: 1px solid #000;
+}
+
 .button{
     background-color: forestgreen;
     color:white;
     margin-top:15px;
 }
+

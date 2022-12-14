@@ -1,3 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+ }
+ 
+ .banner-background {
+    background-image: url('../../assets/football-488714.jpg');
+    height: 32vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    height: 55%;
+    width: 60%;
+    background-color: rgb(0, 0, 0, 60%);
+    color: white;
+    box-sizing: border-box;
+ }
+ 
+ .banner h1 {
+    font-size: 35px;
+    font-weight: bold;
+ }
+ 
+ .button {
+    width: 250px;
+    background-color: forestgreen;
+    color: white;
+ }
+ 
+ .button:hover {
+    background-color: white;
+    color: black;
+ }
+ 
+ .button strong {
+    text-align: center;
+    font-size: 15px;
+ }
+ 
+ @media only screen and (max-width: 550px) {
+ 
+    .banner h1{
+       font-size: 30px;
+    }
+ }
+
 table{
     margin: 20px 0 0 20px;
     font-size:20px;

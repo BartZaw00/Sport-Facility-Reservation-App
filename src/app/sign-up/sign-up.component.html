@@ -1,18 +1,18 @@
-<div class="sign-up-container">
-    <div class="middle-sign-up-container">
-    
-    <label for="username" class="sign_up_information">Nazwa Użytkownika</label>
-    <input [(ngModel)]="user.userNick"   type="text" placeholder="Nazwa Użytkownika" class="login_input" required>
-    
-    <label for="email" class="sign_up_information">Email</label>
-    <input [(ngModel)]="user.userEmail" type="email" placeholder="Email" class="login_input" required>
-    
-    <label for="password" class="sign_up_information">Hasło</label>
-    <input [(ngModel)]="user.userPassword" type="password" placeholder="Hasło" class="login_input" required>
-    
-    <button (click)="createUser(user)" mat-raised-button id="login_button">
-        <b>Zarejestruj się</b>
-    </button>
+<div id="signup">
+    <div class="signup-form">
+        <fieldset class="signup-fieldset">
+            <label for="username">Nazwa Użytkownika</label>
+            <input [(ngModel)]="user.userNick" type="text" placeholder="Nazwa Użytkownika" class="signup-input" required>
+
+            <label for="email">Email</label>
+            <input [(ngModel)]="user.userEmail" type="email" placeholder="Email" class="signup-input" required>
+
+            <label for="password">Hasło</label>
+            <input [(ngModel)]="user.userPassword" type="password" placeholder="Hasło" class="signup-input" required>
+        </fieldset>
+        <button (click)="createUser(user)" mat-raised-button class="button">
+            <strong>Zarejestruj się</strong>
+        </button>
     </div>
 </div>
 

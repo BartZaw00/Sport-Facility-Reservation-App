@@ -1,18 +1,19 @@
-<div class="login-container">
-    <div class="middle-login-container">
-        <form>
-            <label for="username" class="login_information">Nazwa Użytkownika</label>
-            <input [(ngModel)]="loginUser.userEmail" name="email" type="email" placeholder="Nazwa Użytkownika" class="login_input" required>
-
-            <label for="password" class="login_information">Hasło</label>
-            <input [(ngModel)]="loginUser.userPassword" name="password" type="password" placeholder="Hasło" class="login_input" required>
-        </form>
-        <button (click)="login()" mat-raised-button id="login_button">
-            <b>Zaloguj się</b>
+<div id="login">
+    <form class="login-form">
+        <fieldset class="login-fieldset">
+            <label for="username">Nazwa Użytkownika</label>
+            <input [(ngModel)]="loginUser.userEmail" name="email" type="email" placeholder="Nazwa Użytkownika"
+                class="login-input" required>
+            <label for="password">Hasło</label>
+            <input [(ngModel)]="loginUser.userPassword" name="password" type="password" placeholder="Hasło"
+                class="login-input" required>
+        </fieldset>
+        <button (click)="login()" mat-raised-button class="button">
+            <strong>Zaloguj się</strong>
         </button>
-        <input type="checkbox" checked="checked" id="remember_me">
-        <label for="remember_me" class="remember_me">Zapamiętaj mnie</label>
-        <span>Nie masz konta? </span>
-        <a routerLink="/sign-up" class="link">Zarejestruj się</a>
-    </div>
+        <div class="login-account">
+            <p>Nie masz konta? </p>
+            <a routerLink="/sign-up" class="link">Zarejestruj się</a>
+        </div>
+    </form>
 </div>

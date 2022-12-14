@@ -30,6 +30,7 @@ import { registerLocaleData } from '@angular/common';
 import localePl from '@angular/common/locales/pl';
 import { UserPopUpComponent } from './user-pop-up/user-pop-up.component';
 import { ReservationsComponent } from './reservations/reservations.component';
+import { MatIconModule } from '@angular/material/icon';
 
 registerLocaleData(localePl);
 
@@ -63,7 +64,8 @@ registerLocaleData(localePl);
     FormsModule,
     MatDialogModule,
     Ng2SearchPipeModule,
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    MatIconModule
   ],
   providers: [AuthenticationGuard],
   bootstrap: [AppComponent]

@@ -1,13 +1,7 @@
-.nav-bar{
-    height: 10%;
-    width: 100%;
-    background-color: brown;
-}
-
 .menu{
     justify-content: space-between;
 }
 
-.menu1{
-    margin: 5px;
+.admin {
+    color: forestgreen;
 }

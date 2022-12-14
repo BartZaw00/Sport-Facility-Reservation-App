@@ -1,9 +1,11 @@
-<div class="sports-facilities-banner">
-    <div class="sports-facilities-middle-container">
-        <b>Obiekty Sportowe</b>
-        <button mat-raised-button id="home_button" routerLink="/home">
-            <b>POWRÓT DO STRONY GŁÓWNEJ</b>
-        </button>
+<div class="banner-background">
+    <div class="banner">
+        <h1>Obiekty Sportowe</h1>
+        <div class="banner-btn">
+            <button mat-raised-button class="button" routerLink="/home">
+                <strong>POWRÓT DO STRONY GŁÓWNEJ</strong>
+            </button>
+        </div>
     </div>
 </div>
 
@@ -13,12 +15,12 @@
     <div class="sport-facility-card" *ngFor="let sportFacility of _sportFacilities | filter: searchText">
         <div class="sport-facility-card-container"> <img src="../../assets/orlik41lodz.jpg" alt="thumbnail"
                 class="sport-facility-thumbnail">
-            <button  mat-raised-button id="reservation_button" routerLink="/sport-facility">
+            <button mat-raised-button id="reservation_button" routerLink="/sport-facility">
                 <b *ngIf="loginService.role==1||loginService.role==2; else elseBlock">REZERWACJE</b>
                 <ng-template #elseBlock><b>REZERWUJ</b></ng-template>
             </button>
-            <button *ngIf="loginService.role==1||loginService.role==2" mat-raised-button id="edit_button" 
-                (click)="openSelectedPopUp(sportFacility)" >
+            <button *ngIf="loginService.role==1||loginService.role==2" mat-raised-button id="edit_button"
+                (click)="openSelectedPopUp(sportFacility)">
                 <b>EDYTUJ</b>
             </button>
             <button *ngIf="loginService.role==1||loginService.role==2" mat-raised-button id="delete_button"
