@@ -46,9 +46,9 @@
         </td>
     </tr>
     <tr>
-        <td><input [(ngModel)]="reservation.reservationDate" placeholder="Początek rezerwacji" /></td>
-        <td><input [(ngModel)]="reservation.reservationFinishDate" placeholder="Koniec rezerwacji" /></td>
-        <td><input [(ngModel)]="reservation.reservationSportFacility" placeholder="ID obiektu" /></td>
+        <td><input class="sport-facility-input" [(ngModel)]="reservation.reservationDate" placeholder="Początek rezerwacji" /></td>
+        <td><input class="sport-facility-input" [(ngModel)]="reservation.reservationFinishDate" placeholder="Koniec rezerwacji" /></td>
+        <td><input class="sport-facility-input" [(ngModel)]="reservation.reservationSportFacility" placeholder="ID obiektu" /></td>
         <td></td>
         <td class="no-border"><button mat-raised-button id="add_reservation_button" (click)="createReservation(reservation)">Dodaj</button>
         </td>

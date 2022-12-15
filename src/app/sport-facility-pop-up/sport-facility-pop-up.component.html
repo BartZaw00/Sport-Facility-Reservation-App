@@ -1,19 +1,38 @@
 <div *ngIf="selectedSportFacility; else elseBlock" class="pop-up-container">
-    <div class="label">Adres obiektu: <input  [(ngModel)]="selectedSportFacility.sportFacilityName" placeholder="Adres obiektu" /></div>
-    <div class="label">Miasto obiektu: <input [(ngModel)]="selectedSportFacility.sportFacilityCity" placeholder="Miasto obiektu" /></div>
-    <div class="label">Kraj obiektu: <input [(ngModel)]="selectedSportFacility.sportFacilityCountry" placeholder="Kraj obiektu" /></div>
-    <div class="label">Typ obiektu: <input [(ngModel)]="selectedSportFacility.sportFacilityType" placeholder="Typ obiektu" /></div>
+    <div class="label">Adres obiektu:
+        <input class="sport-facility-input" [(ngModel)]="selectedSportFacility.sportFacilityName"
+            placeholder="Adres obiektu" />
+    </div>
+    <div class="label">Miasto obiektu:
+        <input class="sport-facility-input" [(ngModel)]="selectedSportFacility.sportFacilityCity" placeholder="Miasto obiektu" />
+    </div>
+    <div class="label">Kraj obiektu:
+        <input class="sport-facility-input" [(ngModel)]="selectedSportFacility.sportFacilityCountry" placeholder="Kraj obiektu" />
+    </div>
+    <div class="label">Typ obiektu:
+        <input class="sport-facility-input" [(ngModel)]="selectedSportFacility.sportFacilityType" placeholder="Typ obiektu" />
+    </div>
     <button (click)="editSportFacility(selectedSportFacility)" mat-raised-button class="button">
         <b>Zapisz</b>
     </button>
 </div>
 
-<ng-template #elseBlock><div class="pop-up-container">
-    <div class="label">Adres obiektu: <input  [(ngModel)]="sportFacility.sportFacilityName" placeholder="Adres obiektu" /></div>
-    <div class="label">Miasto obiektu: <input [(ngModel)]="sportFacility.sportFacilityCity" placeholder="Miasto obiektu" /></div>
-    <div class="label">Kraj obiektu: <input [(ngModel)]="sportFacility.sportFacilityCountry" placeholder="Kraj obiektu" /></div>
-    <div class="label">Typ obiektu: <input [(ngModel)]="sportFacility.sportFacilityType" placeholder="Typ obiektu" /></div>
-    <button (click)="createSportFacility(sportFacility)" mat-raised-button class="button">
-        <b>Zapisz</b>
-    </button>
-</div></ng-template>
+<ng-template #elseBlock>
+    <div class="pop-up-container">
+        <div class="label">Adres obiektu:
+            <input class="sport-facility-input" [(ngModel)]="sportFacility.sportFacilityName" placeholder="Adres obiektu" />
+        </div>
+        <div class="label">Miasto obiektu:
+            <input class="sport-facility-input" [(ngModel)]="sportFacility.sportFacilityCity" placeholder="Miasto obiektu" />
+        </div>
+        <div class="label">Kraj obiektu:
+            <input class="sport-facility-input" [(ngModel)]="sportFacility.sportFacilityCountry" placeholder="Kraj obiektu" />
+        </div>
+        <div class="label">Typ obiektu:
+            <input class="sport-facility-input" [(ngModel)]="sportFacility.sportFacilityType" placeholder="Typ obiektu" />
+        </div>
+        <button (click)="createSportFacility(sportFacility)" mat-raised-button class="button">
+            <b>Zapisz</b>
+        </button>
+    </div>
+</ng-template>
